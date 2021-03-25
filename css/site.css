@@ -1,0 +1,39 @@
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 10000;
+    background-color: rgba(0,0,0,0.5);
+}
+.progressModal {
+    width: 50%;
+    height: auto;
+    /*line-height: 200px;*/
+    margin: auto;
+    position: absolute;
+    top: 5%; 
+    left: 0; 
+    bottom: 15; 
+    right: 0;
+    margin: 0 auto;
+    padding-bottom: 20px;
+    background-color: white;
+    border-radius: 5px;
+    text-align: center;
+    z-index: 11000; /* 1px higher than the overlay layer */
+}
+.hidden {
+    display:none;
+}
+
+.my-text-right {
+    text-align: right;
+    padding: 10px;
+}
+
+.my-text-left {
+    text-align: left;
+    padding: 10px;
+}
