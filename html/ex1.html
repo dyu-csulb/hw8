@@ -15,15 +15,16 @@
       Local References
     ==================--> 
     <link href="../css/site.css" rel="stylesheet">
+    <link href="../css/ex1.css" rel="stylesheet">
     <script src="../js/ex1.js"></script>
     <script src="../js/site.js"></script>
-    <title>David Yu - HW7</title>
+    <title>David Yu - HW8</title>
 </head>
 
 <body>
     <div class="container" style="padding-top:15px;">
         <h2>
-            Exercise #1: Dropdown List
+            Exercise #1: Query a Web Server
         </h2>
         <hr>
         <a href="../index.html" title="Return to Index page">Return to Index page</a>
@@ -31,7 +32,7 @@
         <a href="ex2.html" title="Click to go to example #2">Go to Exercise 2</a>
         <br />
         <hr>
-        <button class="btn btn-sm btn-primary" id="btnShowQuestion" >Ex 1: Dropdown List</button>
+        <button class="btn btn-sm btn-primary" id="btnShowQuestion" >Ex 1: Query a Web Server</button>
         <button class="btn btn-sm btn-primary" id="btnOverLay">View Requirement</button>
         <br />
         <br />
@@ -64,39 +65,34 @@
     ================================-->
     <div class="container" id="questionModal" style="width: 650px;">
         <br />
-        <table style="width: 100%;">
-            <tr>
-                <td>
-                    <h4 style="text-align: left; padding-left:15px;">
-                        Exercise #1: Dropdown List
-                    </h4>
-                </td>
-                <td style="text-align: right;">
-                    <button type='button' class="btn btn-sm btn-close btnOverLayClose" style="margin-top: -20px;"></button>
-                </td>
-            </tr>
-        </table> 
+        <div class="row">
+            <div class="col-10">
+                <h4 style="text-align: left; padding-left:15px; ">
+                    Exercise #1: Query a Web Server
+                </h4>
+            </div>
+            <div class="col-2" style="padding-top: 10px; text-align: right; padding-right: 25px;">
+                <button type='button' class="btn btn-sm btn-close btnOverLayClose" style="margin-top: -20px;"></button>
+            </div>
+        </div>
         <hr />
         <div class="container">
         <div id='div-body' style="text-align: left;"> 
-            <h3>A few of the Game of Thrones characters</h3>
-            <form>
-              <label for="house">House</label>:
-              <select name="house" id="house">
-                  <option value="" selected>Select a house</option>
-              </select>
-            </form>
-            
-            <p>
-              <ul id="characters"></ul>
-            </p>
-            
+            <h2>Some famous paintings</h2>
+            <table class="my-table" id="paintings">
+                <thead>
+                    <th>Name</th>
+                    <th>Year</th>
+                    <th>Artist</th>
+                </thead>
+            </table>            
         </div>
-    
+
         <hr />
-        <!-- <button type='button' class="btn btn-sm btn-primary" onclick="myFunction()">Run Program</button>
-        <button type='button' class="btn btn-sm btn-primary" onclick="clearValues()">Clear</button> -->
-        <button type='button' class="btn btn-sm btn-danger btnOverLayClose"  >Close</button>
+        <button type='button' class="btn btn-sm btn-primary" onclick="myFunction()">Run Program</button>
+       
+        <button type='button' class="btn btn-sm btn-primary" onclick="clearValues()">Clear</button> 
+        <button type='button' class="btn btn-sm btn-danger btnOverLayClose">Close</button>
     </div>
     </div>
 

@@ -1,62 +1,57 @@
 
 
-window.addEventListener("load", myLoadEvent);
-
-function myLoadEvent() {
-  const houses = [
-    {
-      code: "ST",
-      name: "Stark"
-    },
-    {
-      code: "LA",
-      name: "Lannister"
-    },
-    {
-      code: "BA",
-      name: "Baratheon"
-    },
-    {
-      code: "TA",
-      name: "Targaryen"
-    }
-  ];
-  
-  let x = document.getElementById("house");
-  for (let i = 0; i < houses.length; i++) { 
-    let option = document.createElement("option");
-    option.text = houses[i].name;
-    option.value = houses[i].code;
-    x.add(option);
-  }
-
-  document.getElementById("house").addEventListener("change", myFunction);
+function myFunction() {
+  getData();
 }
 
-function myFunction() {
-  document.getElementById("characters").innerHTML = "";
-  const getCharacters = houseCode => {
-    switch (houseCode) {
-      case "ST":
-        return ["Eddard", "Catelyn", "Robb", "Sansa", "Arya", "Jon Snow"];
-      case "LA":
-        return ["Tywin", "Cersei", "Jaime", "Tyrion"];
-      case "BA":
-        return ["Robert", "Stannis", "Renly"];
-      case "TA":
-        return ["Aerys", "Daenerys", "Viserys"];
-      default:
-        return []; // Empty array
-    }
-  };
 
-  let e = document.getElementById("house");   
-  let ul = document.getElementById("characters");
-  
-  for (let i = 0; i < getCharacters(e.value).length; i++) {
-      let name = getCharacters(e.value)[i];
-      let li = document.createElement('li');
-      li.appendChild(document.createTextNode(name));
-      ul.appendChild(li);
+function getData() {
+  clearValues();
+
+  let myObj = []
+  const url = 'https://raw.githubusercontent.com/bpesquet/thejsway/master/resources/paintings.json';
+
+  fetch(url)
+  .then(response => response.json())
+  .then(data => data.forEach(elm => 
+      myObj.push({name: elm.name, year: elm.year, artist: elm.artist})
+    ),
+  )
+  .then(function () {
+    let table = document.getElementById("paintings");
+    let tableBody = document.createElement('tbody');
+    table.appendChild(tableBody);
+      
+    for (let i=0; i<myObj.length; i++){
+      let tr = document.createElement('tr');
+       tableBody.appendChild(tr);
+       
+       for (let j=0; j<1; j++){
+        let td1 = document.createElement('td');
+        td1.appendChild(document.createTextNode( myObj[i].name ));
+        tr.appendChild(td1);
+       }
+       for (let j=1; j<2; j++){
+        let td2 = document.createElement('td');
+        td2.appendChild(document.createTextNode( myObj[i].year ));
+        tr.appendChild(td2);
+       }
+       for (let j=2; j<3; j++){
+        let td3 = document.createElement('td');
+        td3.appendChild(document.createTextNode( myObj[i].artist ));
+        tr.appendChild(td3);
+       }
+    }
+    table.appendChild(tableBody);
   }
+  )
+  .catch(function (err) {
+    console.log('Fetch Error: ', err);
+  })
+}
+
+
+function clearValues() {
+  let table = document.getElementById('paintings');
+  while(table.childNodes.length>2){table.removeChild(table.lastChild);}
 }
