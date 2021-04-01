@@ -15,26 +15,29 @@
       Local References
     ==================--> 
     <link href="../css/site.css" rel="stylesheet">
-    <link href="../css/ex2.css" rel="stylesheet">
+    <link href="../css/ex4.css" rel="stylesheet">
     <script src="../js/site.js"></script>
     <script src="../js/ex4.js"></script>
 
-    <title>David Yu - HW7</title>
+    <title>David Yu - HW8</title>
 </head>
-
 <body>
-
     <div class="container" style="padding-top:15px;">
         <h2>
-            Exercise #2: Autocomplete
+            Exercise #4: Sample Form
         </h2>
         <hr>
         <a href="../index.html" title="Return to Index page">Return to Index page</a>
         <br/>
-        <a href="ex1.html" title="Click to go to example #2">Go to Exercise 1</a>
+        <a href="ex1.html" title="Click to go to example #1">Go to Exercise 1</a>
         <br />
+        <a href="ex2.html" title="Click to go to example #2">Go to Exercise 2</a>
+        <br />
+        <a href="ex3.html" title="Click to go to example #3">Go to Exercise 3</a>
+        <br />
+        <a href="ex4.html" title="Click to go to example #4">Go to Exercise 4</a>
         <hr>
-        <button class="btn btn-sm btn-primary" id="btnShowQuestion" >Ex 2: Autocomplete</button>
+        <button class="btn btn-sm btn-primary" id="btnShowQuestion" >Ex 4: Sample Form</button>
         <button class="btn btn-sm btn-primary" id="btnOverLay">View Requirement</button>
         <br />
         <br />
@@ -45,60 +48,143 @@
     ================================-->
     <div class="container" id="requirementModal" style="width: 650px;">
         <br />
-        <table style="width: 100%;">
-            <tr>
-                <td>
-                    <h4 style="text-align: left; padding-left:15px;">
-                        Exercise #2 Requirement
-                    </h4>
-                </td>
-                <td style="text-align: right;">
-                    <button type='button' class="btn btn-sm btn-close btnOverLayClose" style="margin-top: -20px;"></button>
-                </td>
-            </tr>
-        </table> 
+        <div class="row">
+            <div class="col-10">
+                <h4 style="text-align: left; padding-left:15px; ">
+                    Exercise #4: Requirement
+                </h4>
+            </div>
+            <div class="col-2" style="padding-top: 10px; text-align: right; padding-right: 25px;">
+                <button type='button' class="btn btn-sm btn-close btnOverLayClose" style="margin-top: -20px;"></button>
+            </div>
+        </div>
         <hr />
-        <img style="max-width:100%; max-height:100%;" src="../img/ex4.png"/>
+        <p><img style="max-width:100%; max-height:100%;" src="../img/ex4.png"/></p>
         <hr />
-        <button type='button' class="btn btn-sm btn-primary btnOverLayClose">Close</button>
+        <button type='button' class="btn btn-sm btn-danger btnOverLayClose">Close</button>
     </div>
     <!--=============================
         Question Modal
     ================================-->
     <div class="container" id="questionModal" style="width: 550px;">
         <br />
-        <table style="width: 100%;">
-            <tr>
-                <td>
-                    <h4 style="text-align: left; padding-left:15px;">
-                        Exercise #2: Autocomplete
-                    </h4>
-                </td>
-                <td style="text-align: right;">
-                    <button type='button' class="btn btn-sm btn-close btnOverLayClose" style="margin-top: -20px;"></button>
-                </td>
-            </tr>
-        </table> 
+        <div class="row">
+            <div class="col-10">
+                <h4 style="text-align: left; padding-left:15px; ">
+                    Exercise #4: Sample Form
+                </h4>
+            </div>
+            <div class="col-2" style="padding-top: 10px; text-align: right; padding-right: 25px;">
+                <button type='button' class="btn btn-sm btn-close btnOverLayClose" style="margin-top: -20px;"></button>
+            </div>
+        </div>
+
         <hr />
         <div class="container">
-            <table>
-                <tr>
-                    <td>
-                        <label for="country">Enter a country name</label>: &nbsp;
+            <div class="form-group row">
+                <label for="txtName" class="col-sm-4 col-form-label text-right">Name:</label>
+                <div class="col-sm-7 pad-5">
+                  <input type="text" class="form-control" id="txtName" placeholder="Name">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="txtEmail" class="col-sm-4 col-form-label text-right">Email:</label>
+                <div class="col-sm-7 pad-5">
+                  <input type="email" class="form-control" id="txtEmail" placeholder="Email">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="txtName" class="col-sm-4 col-form-label text-right">Payment Type:</label>
+                <div class="col-sm-7 pad-5 text-left">
+
+                    <input type="radio" id="cash" name="payType" value="Cash">
+                    <label for="cash">Cash</label><br>
+                    
+                    <input type="radio" id="credit" name="payType" value="CreditCard">
+                    <label for="credit">Credit</label><br>
+                    
+                    <input type="radio" id="googlePay" name="payType" value="GooglePay">
+                    <label for="googlePay">Google Pay</label><br>
+
+                    <input type="radio" id="applePay" name="payType" value="ApplePay">
+                    <label for="applePay">Apple Pay</label>
+
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="txtName" class="col-sm-4 col-form-label text-right">Special Promotions:</label>
+                <div class="col-sm-7 mt-2 text-left">
+                    <input type="checkbox" > 
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="txtName" class="col-sm-4 col-form-label text-right">Preferred Location:</label>
+                <div class="col-sm-7 mt-2 text-left">
+                    <select name="county" id="county">
+                        <option value="">-- Select a County --</option>
+                        <option value="LA">Los Angeles County</option>
+                        <option value="OC">Orange County</option>
+                        <option value="RV">Riverside County</option>
+                        <option value="SD">San Diego County</option>
+                      </select>
+                </div>
+            </div>
+        
+            <div id="results">
+                <hr />
+            <table id="profile" style="width: 100%;">
+                <thead>
+                    <th>Key</th>
+                    <th>Value</th>
+                </thead>
+                    <td style="width: 170px;">
+                        Name:
                     </td>
                     <td>
-                        <input style="width: 300px;" class="form-control" type="text" id="country">
-                        <div style="width: 300px;" id="suggestions"></div>
+                        <label id='lblName'></label>
+                    </td>
+                </th>
+                <tr>
+                    <td>
+                        Email:
+                    </td>
+                    <td>
+                        <label id='lblEmail'></label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Payment:
+                    </td>
+                    <td>
+                        <label id='lblPaymentType'></label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                         Promotions:
+                    </td>
+                    <td>
+                        <label id='lblPromotion'></label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Location:
+                    </td>
+                    <td>
+                        <label id='lblLocation'></label>
                     </td>
                 </tr>
             </table>
-            <hr />
-            <button type='button' class="btn btn-sm btn-danger btnOverLayClose"  >Close</button>
         </div>
-
+            <hr />
+            <button id='btnSubmit' type='button' class="btn btn-sm btn-primary">Submit</button>
+            <button id='btnCancel' type='button' class="btn btn-sm btn-primary">Cancel</button>
+            <button type='button' class="btn btn-sm btn-danger btnOverLayClose"  >Close</button>
+    
+       
+        </div>
     </div>
-
-
 </body>
-
 </html>
