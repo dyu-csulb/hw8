@@ -94,33 +94,31 @@
                 </div>
             </div>
             <div class="form-group row">
-                <label for="txtName" class="col-sm-4 col-form-label text-right">Payment Type:</label>
+                <label for="rdoPayType" class="col-sm-4 col-form-label text-right">Payment Type:</label>
                 <div class="col-sm-7 pad-5 text-left">
-
-                    <input type="radio" id="cash" name="payType" value="Cash">
+                    <input type="radio" id="cash" name="rdoPayType" checked value="Cash">
                     <label for="cash">Cash</label><br>
                     
-                    <input type="radio" id="credit" name="payType" value="CreditCard">
+                    <input type="radio" id="credit" name="rdoPayType" value="CreditCard">
                     <label for="credit">Credit</label><br>
                     
-                    <input type="radio" id="googlePay" name="payType" value="GooglePay">
+                    <input type="radio" id="googlePay" name="rdoPayType" value="GooglePay">
                     <label for="googlePay">Google Pay</label><br>
 
-                    <input type="radio" id="applePay" name="payType" value="ApplePay">
+                    <input type="radio" id="applePay" name="rdoPayType" value="ApplePay">
                     <label for="applePay">Apple Pay</label>
-
                 </div>
             </div>
             <div class="form-group row">
-                <label for="txtName" class="col-sm-4 col-form-label text-right">Special Promotions:</label>
+                <label for="chkPromotion" class="col-sm-4 col-form-label text-right">Special Promotions:</label>
                 <div class="col-sm-7 mt-2 text-left">
-                    <input type="checkbox" > 
+                    <input id='chkPromotion' type="checkbox" > 
                 </div>
             </div>
             <div class="form-group row">
-                <label for="txtName" class="col-sm-4 col-form-label text-right">Preferred Location:</label>
+                <label for="cboLocation" class="col-sm-4 col-form-label text-right">Preferred Location:</label>
                 <div class="col-sm-7 mt-2 text-left">
-                    <select name="county" id="county">
+                    <select name="county" id="cboLocation">
                         <option value="">-- Select a County --</option>
                         <option value="LA">Los Angeles County</option>
                         <option value="OC">Orange County</option>
@@ -157,7 +155,7 @@
                         Payment:
                     </td>
                     <td>
-                        <label id='lblPaymentType'></label>
+                        <label id='lblPayType'></label>
                     </td>
                 </tr>
                 <tr>
