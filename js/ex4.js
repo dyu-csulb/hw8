@@ -1,5 +1,4 @@
 
-
 window.addEventListener("load", bind);
 
 function bind() {
@@ -7,7 +6,6 @@ function bind() {
   document.getElementById("btnCancel").addEventListener("click", hideResults);
   document.getElementById("results").style.display='none';
 }
-
 
 
 function showResults() {
@@ -35,10 +33,6 @@ function showResults() {
     
 } 
 
-function emailIsValid (email) {
-  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
-}
-
 function hideResults() {
   var x = document.getElementById("results");
     x.style.display = "none";
@@ -51,26 +45,34 @@ function hideResults() {
 
 } 
 
-function getData() {
+function emailIsValid (email) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
+}
 
-  let v_name = document.getElementById("txtName").value;
-  let v_email = document.getElementById("txtEmail").value;
+function getPayType() {
   let v_payType = '';
-
   var rdo = document.getElementsByName('rdoPayType');     
   for(i = 0; i < rdo.length; i++) {
       if(rdo[i].checked)
       v_payType = rdo[i].value;
   }
+  return v_payType;
+}
 
-  let v_promotion =document.getElementById("chkPromotion").checked; 
-  let v_location = document.getElementById("cboLocation").value;
-
-  document.getElementById("lblName").innerHTML = v_name;
-  document.getElementById("lblEmail").innerHTML = v_email;
-  document.getElementById("lblPayType").innerHTML = v_payType;
-  document.getElementById("lblPromotion").innerHTML = v_promotion;
-  document.getElementById("lblLocation").innerHTML = v_location;
+function getData() {
+  obj = {
+    name : document.getElementById("txtName").value,
+    email: document.getElementById("txtEmail").value,
+    payType: getPayType(),
+    promotion: document.getElementById("chkPromotion").checked,
+    location: document.getElementById("cboLocation").value
+  }
+ 
+  document.getElementById("lblName").innerHTML = obj.name;
+  document.getElementById("lblEmail").innerHTML = obj.email;
+  document.getElementById("lblPayType").innerHTML = obj.payType;
+  document.getElementById("lblPromotion").innerHTML = obj.promotion;
+  document.getElementById("lblLocation").innerHTML = obj.location;
 
   var x = document.getElementById("results");
   x.style.display = "block";
