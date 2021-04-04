@@ -15,7 +15,7 @@
       Local References
     ==================--> 
     <link href="../css/site.css" rel="stylesheet">
-    <link href="../css/ex2.css" rel="stylesheet">
+    <link href="../css/ex3.css" rel="stylesheet">
     <script src="../js/site.js"></script>
     <script src="../js/ex3.js"></script>
 
@@ -23,7 +23,6 @@
 </head>
 
 <body>
-
     <div class="container" style="padding-top:15px;">
         <h2>
             Exercise #3: JSON to Web Server
@@ -82,10 +81,29 @@
         </div>
         <hr />
         <div class="container">
-            <p>Click the Submit button to make Http Post Request to server. </p>
+            <p style="font-size: 12px; color: red; text-align: left;" >** Click the Submit button to make Http Post Request to server. **</p>
+            <div class="form-group row">
+                <label for="txtName" style="text-align: right;" class="col-sm-3 col-form-label text-right">Name:</label>
+                <div class="col-sm-7 pad-5">
+                  <input type="text" class="form-control" id="txtName" placeholder="Enter your name..">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="txtCountry" style="text-align: right;" class="col-sm-3 col-form-label text-right">Countries:</label>
+                <div class="col-sm-7 pad-5">
+                  <input type="text" class="form-control" id="txtCountry" title="Enter country comma seperated" placeholder="Enter country comma seperated...">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="txtYear" style="text-align: right;" class="col-sm-3 col-form-label text-right">Year:</label>
+                <div class="col-sm-7 pad-5">
+                  <input type="text" class="form-control" id="txtYear" title="Enter year comma seperated" placeholder="Enter year comma seperated...">
+                </div>
+            </div>
             <hr />
-            <button id='btnSubmit' onclick="myFunction()" type='button' class="btn btn-sm btn-primary">Submit</button>
-            <button id='btnCancel' type='button' class="btn btn-sm btn-primary">Clear</button>
+        
+            <button id='btnSubmit' type='button' class="btn btn-sm btn-primary">Submit</button>
+            <button id='btnClear'  type='button' class="btn btn-sm btn-primary">Clear</button>
             <button type='button' class="btn btn-sm btn-danger btnOverLayClose"  >Close</button>      
         </div>
 

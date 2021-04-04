@@ -37,3 +37,18 @@ td{
     padding-right: 5px;  
 }
 
+.my-img {
+    padding-bottom:25px; 
+    height: 170px; 
+    width:150px;
+    border: 0px;
+}
+
+img {
+    display: none;
+}
+
+
+img[src] {
+   display: block;
+ }

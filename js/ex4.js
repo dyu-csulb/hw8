@@ -34,7 +34,7 @@ function showResults() {
 } 
 
 function hideResults() {
-  var x = document.getElementById("results");
+    let x = document.getElementById("results");
     x.style.display = "none";
 
     document.getElementById("txtName").value='';
@@ -51,7 +51,7 @@ function emailIsValid (email) {
 
 function getPayType() {
   let v_payType = '';
-  var rdo = document.getElementsByName('rdoPayType');     
+  let rdo = document.getElementsByName('rdoPayType');     
   for(i = 0; i < rdo.length; i++) {
       if(rdo[i].checked)
       v_payType = rdo[i].value;
@@ -74,7 +74,8 @@ function getData() {
   document.getElementById("lblPromotion").innerHTML = obj.promotion;
   document.getElementById("lblLocation").innerHTML = obj.location;
 
-  var x = document.getElementById("results");
+  let x = document.getElementById("results");
   x.style.display = "block";
 
 }
+
