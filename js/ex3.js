@@ -35,10 +35,32 @@ function myObj() {
 
 }
 
-function myFunction() {
+function myFunction(){
+  if (document.getElementById("txtName").value==='' ) {
+    alert('Please enter a name!');
+    document.getElementById("txtName").focus();
+  }
+
+  else if (document.getElementById("txtCountry").value==='') {
+    alert('Please enter a country!')
+    document.getElementById("txtCountry").focus();
+  }
+
+  else if (document.getElementById("txtYear").value==='') {
+    alert('Please enter a year!')
+    document.getElementById("txtYear").focus();
+  }
+
+  else {
+    callApi();
+  }
+}
+
+
+function callApi() {
   const url = 'https://thejsway-server.herokuapp.com/api/countries';
   fetch(url, {
-    method: 'POST', // or 'PUT'
+    method: 'POST', 
     headers: {
       'Content-Type': 'application/json',
     },
