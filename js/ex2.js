@@ -5,7 +5,7 @@ window.addEventListener("load", bind);
 function bind() {
   document.getElementById("results").style.display='none';
   
-  var input = document.getElementById("btnLookup");
+  let input = document.getElementById("btnLookup");
   input.addEventListener("keyup", function(event) {
     if (event.key === 13) {
       event.preventDefault();
@@ -17,12 +17,12 @@ function bind() {
 
 
 function showResults() {
-  var x = document.getElementById("results");
+  let x = document.getElementById("results");
     x.style.display = "block";
 } 
 
 function hideResults() {
-  var x = document.getElementById("results");
+  let x = document.getElementById("results");
     x.style.display = "none";
 } 
 
